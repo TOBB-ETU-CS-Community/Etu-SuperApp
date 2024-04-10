@@ -20,6 +20,13 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.login_outlined),
+            title: const Text('Giriş'),
+            onTap: () {
+              Navigator.pushNamed(context, "Log");
+            },
+          ),
+          ListTile(
             leading: const Icon(Icons.list),
             title: const Text('Ders Programı'),
             onTap: () {

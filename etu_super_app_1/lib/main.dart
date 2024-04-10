@@ -1,3 +1,4 @@
+import 'package:etu_super_app_1/Pages/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
           initialRoute: '/',
           routes: {
             '/': (context) => const MyHomePage(),
-            'SchedulePage': (context) => const SchedulePage()
+            'SchedulePage': (context) => const SchedulePage(),
+            'Log': (context)=> const MyLoginScreen()
           },
         ),
       ),
