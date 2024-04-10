@@ -16,7 +16,7 @@ class _LoginState extends State<MyLoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login"),
+        title: const Text("Giriş Yapınız"),
       ),
       body: Form(
         key: _formKey,
@@ -31,10 +31,10 @@ class _LoginState extends State<MyLoginScreen> {
                 child: TextFormField(
                   controller: emailController,
                   decoration: const InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Email"),
+                      border: OutlineInputBorder(), labelText: "Okul Mailiniz"),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your email';
+                      return 'Lütfen okul emailinizi giriniz!';
                     }
                     return null;
                   },
@@ -47,10 +47,10 @@ class _LoginState extends State<MyLoginScreen> {
                   controller: passwordController,
                   obscureText: true,
                   decoration: const InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Password"),
+                      border: OutlineInputBorder(), labelText: "Şifre"),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your password';
+                      return 'Lütfen şifrenizi giriniz!';
                     }
                     return null;
                   },
@@ -63,14 +63,16 @@ class _LoginState extends State<MyLoginScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        // Navigate the user to the Home page
+                        print("entered");
+                        //navigate to the main page
+                        
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Please fill input')),
+                          const SnackBar(content: Text('Lütfen bilgilerinizi giriniz')),
                         );
                       }
                     },
-                    child: const Text('Submit'),
+                    child: const Text('Giriş'),
                   ),
                 ),
               ),
